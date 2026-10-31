@@ -6,15 +6,12 @@ A complete GPT, from text to generation, in **199 lines of pure Python**. It imp
 
 - **Author:** Andrej Karpathy
 - **Original:** <https://gist.github.com/karpathy/8627fe009c40f57531cb18360106ce95>
-- **Pinned revision:** `14fb038816c7aae0bb9342c2dbf1a51dd134a5ff`
+- **Copied from revision:** `14fb038816c7aae0bb9342c2dbf1a51dd134a5ff`, on 31 October 2026, unchanged
 - **sha256:** `d47d88c2fd432c8ebdc1048beab7f7eb64ea7e0e664e11b812d72a6d95ebccee`
-
-The code is not stored in this repository. `get.sh` downloads that exact revision from the author's gist and refuses to keep it if the sha256 differs.
 
 ## Run it
 
 ```bash
-./get.sh
 python3 microgpt.py
 ```
 
@@ -47,7 +44,7 @@ The error is noisy from step to step because each step looks at a single name; w
 
 ## Things to try
 
-Change one line, run again, compare. Edit a copy (`cp microgpt.py experiment.py`) so `get.sh` keeps the original intact.
+Change one line, run again, compare. Edit a copy (`cp microgpt.py experiment.py`) so the original stays intact.
 
 - `temperature = 0.5` → `1.0`: stranger names. → `0.1`: safe, repetitive ones.
 - `num_steps = 1000` → `3000`: lower error, more convincing names, three times the wait.

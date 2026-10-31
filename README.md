@@ -6,13 +6,12 @@ By [Ciro Cesar Maciel](https://ciromaciel.click/?ref=oss-study), author of [*IA 
 
 [Português](README.pt-BR.md)
 
-Each folder takes one piece of reference code, the kind a researcher wrote to show the whole idea in as few lines as possible, and adds what the original leaves to you: what each part does, how to run it, what it printed when we ran it, and what to study next. The code itself is never copied here. Each folder's `get.sh` downloads it from the author, pinned to one revision, and checks its sha256, so you run exactly what the guide describes and the author keeps their own work.
+Each folder keeps one piece of reference code, the kind a researcher wrote to show the whole idea in as few lines as possible, exactly as its author published it, and adds what the original leaves to you: what each part does, how to run it, what it printed when we ran it, and what to study next.
 
 ## Start here: a whole GPT in 199 lines
 
 ```bash
 git clone https://github.com/ciro-maciel/study && cd study/microgpt
-./get.sh
 python3 microgpt.py
 ```
 
@@ -48,4 +47,4 @@ I build software on my own, with a team of AI agents, and open what I can.
 
 ## License
 
-The guides and scripts in this repository are MIT ([LICENSE](LICENSE)). The code each folder downloads belongs to its author and is not part of this repository ([NOTICE](NOTICE)).
+The guides in this repository are MIT ([LICENSE](LICENSE)). The reference code in each folder belongs to its author, credited at the top of its guide and in [NOTICE](NOTICE).

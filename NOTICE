@@ -1,15 +1,12 @@
 Study
-Copyright (c) 2026 Ciro Cesar Maciel. Licensed under the MIT License (LICENSE).
+Copyright (c) 2026 Ciro Cesar Maciel. The guides are licensed under the MIT License (LICENSE).
 
-The MIT License covers the guides, the scripts and every other file committed here.
+The reference code in each folder is kept exactly as its author published it and
+belongs to its author; the MIT License above does not apply to it:
 
-This repository does not include third-party code. Each folder's get.sh downloads
-the original from its author when you run it, pinned to one revision and checked by
-sha256. That code stays under its author's terms:
-
-- microgpt.py, by Andrej Karpathy.
+- microgpt/microgpt.py, by Andrej Karpathy.
   https://gist.github.com/karpathy/8627fe009c40f57531cb18360106ce95
-  Downloaded by microgpt/get.sh; never committed (see .gitignore).
+  Copied unchanged from revision 14fb038816c7aae0bb9342c2dbf1a51dd134a5ff on 31 October 2026.
 
-- input.txt (first names), from karpathy/makemore, downloaded by microgpt.py itself.
+- input.txt (first names), from karpathy/makemore, downloaded by microgpt.py when it runs.
   https://github.com/karpathy/makemore (MIT License)

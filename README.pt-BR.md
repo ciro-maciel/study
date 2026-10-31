@@ -6,13 +6,12 @@ Por [Ciro Cesar Maciel](https://ciromaciel.click/?ref=oss-study), autor de [*IA 
 
 [English](README.md)
 
-Cada pasta pega um código de referência, daqueles que um pesquisador escreve para mostrar a ideia inteira no menor número de linhas, e acrescenta o que o original deixa por sua conta: o que cada parte faz, como rodar, o que apareceu na tela quando rodamos e o que estudar depois. O código em si nunca é copiado para cá. O `get.sh` de cada pasta baixa do autor, numa versão fixa, e confere o sha256: você roda exatamente o que o guia descreve, e o autor continua dono do que escreveu.
+Cada pasta guarda um código de referência, daqueles que um pesquisador escreve para mostrar a ideia inteira no menor número de linhas, exatamente como o autor publicou, e acrescenta o que o original deixa por sua conta: o que cada parte faz, como rodar, o que apareceu na tela quando rodamos e o que estudar depois.
 
 ## Comece aqui: um GPT inteiro em 199 linhas
 
 ```bash
 git clone https://github.com/ciro-maciel/study && cd study/microgpt
-./get.sh
 python3 microgpt.py
 ```
 
@@ -48,4 +47,4 @@ Eu faço software sozinho, com uma equipe de agentes de IA, e abro o que posso.
 
 ## Licença
 
-Os guias e os scripts deste repositório são MIT ([LICENSE](LICENSE)). O código que cada pasta baixa é do seu autor e não faz parte deste repositório ([NOTICE](NOTICE)).
+Os guias deste repositório são MIT ([LICENSE](LICENSE)). O código de referência de cada pasta é do seu autor, creditado no topo do guia e no [NOTICE](NOTICE).

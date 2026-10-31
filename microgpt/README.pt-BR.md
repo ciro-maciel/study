@@ -6,15 +6,12 @@ Um GPT completo, do texto à geração, em **199 linhas de Python puro**. Usa s�
 
 - **Autor:** Andrej Karpathy
 - **Original:** <https://gist.github.com/karpathy/8627fe009c40f57531cb18360106ce95>
-- **Versão fixada:** `14fb038816c7aae0bb9342c2dbf1a51dd134a5ff`
+- **Copiado da versão:** `14fb038816c7aae0bb9342c2dbf1a51dd134a5ff`, em 31 de outubro de 2026, sem alteração
 - **sha256:** `d47d88c2fd432c8ebdc1048beab7f7eb64ea7e0e664e11b812d72a6d95ebccee`
-
-O código não fica guardado neste repositório. O `get.sh` baixa essa versão exata do gist do autor e se recusa a guardá-la se o sha256 for diferente.
 
 ## Rodar
 
 ```bash
-./get.sh
 python3 microgpt.py
 ```
 
@@ -47,7 +44,7 @@ O erro oscila de um passo para o outro porque cada passo olha um nome só; acomp
 
 ## Para experimentar
 
-Mude uma linha, rode de novo, compare. Edite uma cópia (`cp microgpt.py experimento.py`), para o `get.sh` manter o original intacto.
+Mude uma linha, rode de novo, compare. Edite uma cópia (`cp microgpt.py experimento.py`), para o original ficar intacto.
 
 - `temperature = 0.5` → `1.0`: nomes mais estranhos. → `0.1`: nomes seguros e repetidos.
 - `num_steps = 1000` → `3000`: erro menor, nomes mais convincentes, três vezes a espera.

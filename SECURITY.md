@@ -1,6 +1,6 @@
 # Security
 
-Every `get.sh` here downloads code from the internet and you then run it on your machine. If a script fetches something other than what it says, skips the sha256 check, or a pinned file turns out to be harmful, please report it privately.
+The programs here run on your machine, and some download data when they start. If one fetches something other than what its guide says, or a file here turns out to be harmful, please report it privately.
 
 **How:** open a [private security advisory](https://github.com/ciro-maciel/study/security/advisories/new) on this repository. Please don't open a public issue for it.
 
