@@ -23,9 +23,9 @@ and belong to their authors under the license each one carries on arXiv:
 - papers/2022-constitutional-ai.pdf: Bai et al., arXiv:2212.08073v1.
   Creative Commons Attribution 4.0 (CC BY 4.0). https://arxiv.org/abs/2212.08073
 
-The books in brain/books/ are public-domain texts, kept unchanged as downloaded from
+The books in books/ are public-domain texts, kept unchanged as downloaded from
 Project Gutenberg on 31 October 2026, including the Project Gutenberg License they carry:
 
-- brain/books/the-wealth-of-nations/: Adam Smith, An Inquiry into the Nature and Causes of
+- books/the-wealth-of-nations/: Adam Smith, An Inquiry into the Nature and Causes of
   the Wealth of Nations (1776). Project Gutenberg eBook #3300.
   https://www.gutenberg.org/ebooks/3300
