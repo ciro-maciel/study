@@ -9,6 +9,7 @@ This repository holds small reference programs, one folder each, kept exactly as
 | `<folder>/<file>` | The original reference code, unchanged |
 | `<folder>/README.md`, `<folder>/README.pt-BR.md` | The guide, in English and Brazilian Portuguese |
 | `books/` | Complete public-domain books, one folder each, text unchanged, with a reading page |
+| `theses/` | Dated theses, `YYYY-MM-DD-title.md` and `.pt-BR.md`, never rewritten: a changed view is a new file with a new date |
 | `papers/` | Scientific papers as PDFs, unchanged from arXiv, with a reading guide |
 | `NOTICE` | Who wrote each original and where it comes from |
 

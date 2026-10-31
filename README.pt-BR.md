@@ -28,6 +28,7 @@ O [guia](microgpt/README.pt-BR.md) percorre o arquivo de cima a baixo: o tokeniz
 | Pasta | O que você aprende | Original de | Tempo para rodar |
 | --- | --- | --- | --- |
 | [`microgpt/`](microgpt/) | Como um GPT é montado e treinado, cada passo à vista | Andrej Karpathy | menos de um minuto |
+| [`theses/`](theses/README.pt-BR.md) | O que acreditamos que precisa ser feito, escrito com data. A primeira: *A empresa de uma pessoa* (31/10/2026) | Ciro Cesar Maciel e Claude | leitura |
 | [`books/`](books/README.pt-BR.md) | Livros completos de domínio público, a começar por *A Riqueza das Nações*, de Adam Smith (1776) | os seus autores | leitura |
 | [`papers/`](papers/) | Os três artigos científicos por trás do Claude: o Transformer, as leis de escala e a Constitutional AI, com como ler cada um junto com o código | pesquisadores do Google, da OpenAI e da Anthropic | leitura |
 

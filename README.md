@@ -28,6 +28,7 @@ The [guide](microgpt/README.md) walks the file top to bottom: the tokenizer, the
 | Folder | What you learn | Original by | Time to run |
 | --- | --- | --- | --- |
 | [`microgpt/`](microgpt/) | How a GPT is built and trained, every step visible | Andrej Karpathy | under a minute |
+| [`theses/`](theses/README.md) | What we believe needs to be done, written with a date. First: *The one-person company* (2026-10-31) | Ciro Cesar Maciel and Claude | reading |
 | [`books/`](books/README.md) | Complete public-domain books, starting with Adam Smith's *The Wealth of Nations* (1776) | their authors | reading |
 | [`papers/`](papers/) | The three scientific papers behind Claude: the Transformer, the scaling laws and Constitutional AI, with how to read each one next to the code | Google, OpenAI and Anthropic researchers | reading |
 
