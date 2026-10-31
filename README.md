@@ -25,6 +25,7 @@ The [guide](microgpt/README.md) walks the file top to bottom: the tokenizer, the
 
 | Folder | What you learn | Original by | Time to run |
 | --- | --- | --- | --- |
+| [`brain/`](brain/README.md) | **The brain**: humanity's great leaps (from the Memex to robots), what they have in common, the books that explain them (starting with *The Wealth of Nations*) and the hypotheses for the next leap | Ciro Cesar Maciel and Claude | reading |
 | [`microgpt/`](microgpt/) | How a GPT is built and trained, every step visible | Andrej Karpathy | under a minute |
 | [`papers/`](papers/) | The three scientific papers behind Claude: the Transformer, the scaling laws and Constitutional AI, with how to read each one next to the code | Google, OpenAI and Anthropic researchers | reading |
 | [`notebook/`](notebook/) | The study notebook: nine concepts, from token to agents, each with the passage from the paper and an experiment you run on a laptop | Claude, with Ciro Cesar Maciel | half a second to a few minutes |

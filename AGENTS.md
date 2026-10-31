@@ -9,6 +9,7 @@ This repository holds small reference programs, one folder each, kept exactly as
 | `<folder>/<file>` | The original reference code, unchanged |
 | `<folder>/README.md`, `<folder>/README.pt-BR.md` | The guide, in English and Brazilian Portuguese |
 | `papers/` | Scientific papers as PDFs, unchanged from arXiv, with a reading guide |
+| `brain/` | The shared brain: `leaps/`, `patterns/`, `frontier/`, `books/` and `log.md` |
 | `notebook/` | The study notebook: one concept per folder in `notebook/concepts/`, plus `log.md` and `predictions.md` |
 | `NOTICE` | Who wrote each original and where it comes from |
 
@@ -18,6 +19,18 @@ This repository holds small reference programs, one folder each, kept exactly as
 - Each guide names the source link, the revision it was copied from and the sha256 of the file.
 - Every number a guide states (time, parameters, loss, outputs) comes from a real run, with the date and the machine next to it. Rerun before you change one.
 - Every guide exists in English and Brazilian Portuguese; a change to one changes the other.
+
+## Keeping the brain
+
+The brain is kept by the agent from what the person brings (a video, a paper, a book, an idea); the person decides what is worth building. It is the main thing in this repository.
+
+- **Start every brain session** by reading `brain/README.md`, `brain/patterns/README.md`, `brain/frontier/README.md` and `grep "^## \[" brain/log.md | tail -10`.
+- **When something comes in**, update every leap page it touches, revisit the patterns, and say in the log and in the reply whether each frontier hypothesis got stronger or weaker, and why. A source never stays only as a summary: it changes the pages it touches.
+- **A leap page** (`brain/leaps/<leap>.md` and `.pt-BR.md`) has: in one sentence · what existed before · the leap (a dated table) · the analysis (what became cheap, the open layer, the interface for people, what it connected, the bad side) · sources · links to patterns and frontier.
+- **A book** gets `brain/books/<book>/` with the full text when it is in the public domain, unchanged, and a reading page with the passages that matter, each with its exact location (book and chapter), and how it reads the leaps.
+- **Every statement of fact has a source** you could read. Check each date against it before writing. Opinion and hypothesis are marked as such.
+- **The bad side of each leap goes in with the good.**
+- **A frontier hypothesis** says which patterns point to it, what can be seen, what would refute it and what we can build. It is never deleted: when refuted, it gets the date and the reason.
 
 ## Keeping the notebook
 

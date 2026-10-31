@@ -25,6 +25,7 @@ O [guia](microgpt/README.pt-BR.md) percorre o arquivo de cima a baixo: o tokeniz
 
 | Pasta | O que você aprende | Original de | Tempo para rodar |
 | --- | --- | --- | --- |
+| [`brain/`](brain/README.pt-BR.md) | **O cérebro**: os grandes saltos da humanidade (do Memex aos robôs), o que eles têm em comum, os livros que os explicam (a começar por *A Riqueza das Nações*) e as hipóteses do próximo salto | Ciro Cesar Maciel e Claude | leitura |
 | [`microgpt/`](microgpt/) | Como um GPT é montado e treinado, cada passo à vista | Andrej Karpathy | menos de um minuto |
 | [`papers/`](papers/) | Os três artigos científicos por trás do Claude: o Transformer, as leis de escala e a Constitutional AI, com como ler cada um junto com o código | pesquisadores do Google, da OpenAI e da Anthropic | leitura |
 | [`notebook/`](notebook/) | O caderno de estudo: nove conceitos, do token aos agentes, cada um com o trecho do artigo e um experimento que roda num notebook | Claude, com o Ciro Cesar Maciel | de meio segundo a alguns minutos |
