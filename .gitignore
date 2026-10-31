@@ -1,0 +1,7 @@
+# Third-party code is downloaded by each folder's get.sh, never committed
+microgpt/microgpt.py
+*.part
+# Data the scripts download when they run
+input.txt
+__pycache__/
+.DS_Store
