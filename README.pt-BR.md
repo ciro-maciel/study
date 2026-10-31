@@ -21,6 +21,8 @@ Num Mac, com Python 3.15, o treino levou **42 segundos**. O erro caiu de 3,37 no
 
 O [guia](microgpt/README.pt-BR.md) percorre o arquivo de cima a baixo: o tokenizador, o autograd que faz o modelo aprender, a atenção, o otimizador, o laço de treino e a geração.
 
+**Prefere ver a rodar?** [Treine um GPT](https://ciromaciel.click/tools/train-gpt?ref=oss-study) é o mesmo algoritmo reescrito em JavaScript, treinando no seu navegador em menos de um minuto, com cada número à vista: os parâmetros saindo do ruído, as quatro cabeças de atenção, os 64 neurônios e a chance de cada próxima letra.
+
 ## O que tem aqui
 
 | Pasta | O que você aprende | Original de | Tempo para rodar |

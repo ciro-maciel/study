@@ -21,6 +21,8 @@ On a Mac, with Python 3.15, training took **42 seconds**. The error went from 3.
 
 The [guide](microgpt/README.md) walks the file top to bottom: the tokenizer, the autograd that lets it learn, the attention, the optimizer, the training loop and the sampling.
 
+**Rather see it than run it?** [Train a GPT](https://ciromaciel.click/tools/train-gpt?ref=oss-study) is the same algorithm rewritten in JavaScript, training in your browser in under a minute, with every number in sight: the parameters leaving the noise, the four attention heads, the 64 neurons and the chance of each next letter. The page is in Brazilian Portuguese.
+
 ## What is here
 
 | Folder | What you learn | Original by | Time to run |
