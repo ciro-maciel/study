@@ -26,6 +26,7 @@ O [guia](microgpt/README.pt-BR.md) percorre o arquivo de cima a baixo: o tokeniz
 | Pasta | O que você aprende | Original de | Tempo para rodar |
 | --- | --- | --- | --- |
 | [`microgpt/`](microgpt/) | Como um GPT é montado e treinado, cada passo à vista | Andrej Karpathy | menos de um minuto |
+| [`papers/`](papers/) | Os três artigos científicos por trás do Claude: o Transformer, as leis de escala e a Constitutional AI, com como ler cada um junto com o código | pesquisadores do Google, da OpenAI e da Anthropic | leitura |
 
 Novas pastas chegam conforme os livros precisam. Uma boa próxima pasta é um código pequeno, completo e que roda, explicando uma ideia só; veja o [CONTRIBUTING.md](CONTRIBUTING.md).
 

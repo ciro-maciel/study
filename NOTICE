@@ -10,3 +10,15 @@ belongs to its author; the MIT License above does not apply to it:
 
 - input.txt (first names), from karpathy/makemore, downloaded by microgpt.py when it runs.
   https://github.com/karpathy/makemore (MIT License)
+
+The papers in papers/ are kept unchanged, as downloaded from arXiv on 31 October 2026,
+and belong to their authors under the license each one carries on arXiv:
+
+- papers/2017-attention-is-all-you-need.pdf: Vaswani et al., arXiv:1706.03762v7.
+  arXiv non-exclusive distribution license. https://arxiv.org/abs/1706.03762
+
+- papers/2020-scaling-laws-for-neural-language-models.pdf: Kaplan et al., arXiv:2001.08361v1.
+  arXiv non-exclusive distribution license. https://arxiv.org/abs/2001.08361
+
+- papers/2022-constitutional-ai.pdf: Bai et al., arXiv:2212.08073v1.
+  Creative Commons Attribution 4.0 (CC BY 4.0). https://arxiv.org/abs/2212.08073

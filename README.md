@@ -26,6 +26,7 @@ The [guide](microgpt/README.md) walks the file top to bottom: the tokenizer, the
 | Folder | What you learn | Original by | Time to run |
 | --- | --- | --- | --- |
 | [`microgpt/`](microgpt/) | How a GPT is built and trained, every step visible | Andrej Karpathy | under a minute |
+| [`papers/`](papers/) | The three scientific papers behind Claude: the Transformer, the scaling laws and Constitutional AI, with how to read each one next to the code | Google, OpenAI and Anthropic researchers | reading |
 
 More folders come as the books need them. A good next folder is a small, complete, runnable piece of code that explains one idea; see [CONTRIBUTING.md](CONTRIBUTING.md).
 

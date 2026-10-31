@@ -8,6 +8,7 @@ This repository holds small reference programs, one folder each, kept exactly as
 | --- | --- |
 | `<folder>/<file>` | The original reference code, unchanged |
 | `<folder>/README.md`, `<folder>/README.pt-BR.md` | The guide, in English and Brazilian Portuguese |
+| `papers/` | Scientific papers as PDFs, unchanged from arXiv, with a reading guide |
 | `NOTICE` | Who wrote each original and where it comes from |
 
 ## Rules that must hold
