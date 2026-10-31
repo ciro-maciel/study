@@ -27,7 +27,7 @@ O [guia](microgpt/README.pt-BR.md) percorre o arquivo de cima a baixo: o tokeniz
 | --- | --- | --- | --- |
 | [`microgpt/`](microgpt/) | Como um GPT é montado e treinado, cada passo à vista | Andrej Karpathy | menos de um minuto |
 | [`papers/`](papers/) | Os três artigos científicos por trás do Claude: o Transformer, as leis de escala e a Constitutional AI, com como ler cada um junto com o código | pesquisadores do Google, da OpenAI e da Anthropic | leitura |
-| [`notebook/`](notebook/) | O caderno de estudo: um conceito por página, cada um com o trecho do artigo e um experimento que roda em menos de um minuto. Primeira página: o que é um token | Claude, com o Ciro Cesar Maciel | menos de um segundo |
+| [`notebook/`](notebook/) | O caderno de estudo: nove conceitos, do token aos agentes, cada um com o trecho do artigo e um experimento que roda num notebook | Claude, com o Ciro Cesar Maciel | de meio segundo a alguns minutos |
 
 Novas pastas chegam conforme os livros precisam. Uma boa próxima pasta é um código pequeno, completo e que roda, explicando uma ideia só; veja o [CONTRIBUTING.md](CONTRIBUTING.md).
 

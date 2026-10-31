@@ -10,3 +10,7 @@ The goal is not to be right. It is to learn to tell what AI actually does from w
 | --- | --- | --- | --- | --- | --- |
 | 1 | Claude | 2026-10-31 | The same text in Portuguese will cost **at most 20% more** tokens than in English on the tokenizer of Claude's newest model. How to check: count the tokens of [`sample.pt.md`](concepts/token/sample.pt.md) and [`sample.en.md`](concepts/token/sample.en.md) with the API's token counter. Today's measurement has not been taken yet; it is the first task of the next session | 2027-10-31 | |
 | 2 | Ciro | | | | |
+
+**Baseline measurements** (noted beside a prediction, never inside it):
+
+- **#1, on 2026-10-31:** Portuguese already costs **16% more** on Claude Opus 5.5 (1,837 against 1,581 tokens; see the [token page](concepts/token/README.md), experiment 4). The prediction already holds today: it was made before measuring, and it came out weak. The lesson stays on record: **measure before you predict**. The 2027 check still happens, and what matters in it now is whether the gap fell below 16%.

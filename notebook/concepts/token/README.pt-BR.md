@@ -62,6 +62,15 @@ O "ç" e o "ã" ocupam dois bytes cada. Um tokenizador que só viu inglês nunca
 
 Os dois textos têm quase o mesmo tamanho (4.092 e 4.174 caracteres). O que muda é a língua em que o tokenizador aprendeu.
 
+**4. Os mesmos dois textos no tokenizador de verdade do Claude.** Medido em 31/10/2026 com o contador de tokens da API (`/v1/messages/count_tokens`), descontados os 8 tokens fixos de uma mensagem:
+
+| Modelo | Inglês | Português | O português custa |
+| --- | --- | --- | --- |
+| Claude Opus 5.5 | 1.581 tokens | 1.837 tokens | **16% a mais** |
+| Claude Haiku 5.5 | 1.581 tokens | 1.837 tokens | 16% a mais |
+
+O tokenizador do Claude aprendeu com muito mais texto e muitas línguas, então a diferença cai de 43% para 16%, mas não some. Os dois modelos deram exatamente a mesma contagem, sinal de que usam o mesmo tokenizador.
+
 **Para experimentar:**
 - `MERGES = 300` → `30`: poucas colagens, pedaços curtos. `microgpt` vira 6 tokens (`m · ic · ro · g · p · t`) e o português custa só 13% a mais.
 - `MERGES = 300` → `1000`: o tokenizador **decora o texto**. Com pouco texto e colagens demais, o começo do README inteiro vira um único token, e o português passa a custar 216% a mais. É o mesmo problema que um modelo tem quando decora os exemplos em vez de aprender: funciona perfeito no que já viu e mal em todo o resto.
@@ -85,4 +94,5 @@ A medida do experimento 3 vale para este tokenizador pequeno, treinado num texto
 ## Perguntas em aberto
 
 - Se o token é só um número, como o modelo sabe que "gato" e "cachorro" estão mais perto um do outro do que de "parafuso"? → **embedding**, a próxima página.
-- Quantos tokens tem o vocabulário do Claude, e quanto o português custa a mais nele? Medir com o contador de tokens da API.
+- ~~Quanto o português custa a mais no Claude?~~ Respondida no experimento 4: 16%.
+- Quantos tokens tem o vocabulário do Claude? A API não informa; fica em aberto.

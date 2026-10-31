@@ -62,6 +62,15 @@ What it printed on a Mac with Python 3.15, on 31 October 2026:
 
 Both texts are almost the same length (4,092 and 4,174 characters). What changes is the language the tokenizer learned from.
 
+**4. The same two texts on Claude's real tokenizer.** Measured on 31 October 2026 with the API's token counter (`/v1/messages/count_tokens`), minus the 8 fixed tokens of a message:
+
+| Model | English | Portuguese | Portuguese costs |
+| --- | --- | --- | --- |
+| Claude Opus 5.5 | 1,581 tokens | 1,837 tokens | **16% more** |
+| Claude Haiku 5.5 | 1,581 tokens | 1,837 tokens | 16% more |
+
+Claude's tokenizer learned from far more text and many languages, so the gap falls from 43% to 16%, but it does not disappear. Both models gave exactly the same count, a sign that they share a tokenizer.
+
 **Things to try:**
 - `MERGES = 300` → `30`: few merges, short pieces. `microgpt` becomes 6 tokens (`m · ic · ro · g · p · t`) and Portuguese costs only 13% more.
 - `MERGES = 300` → `1000`: the tokenizer **memorizes the text**. With little text and too many merges, the whole opening of the README becomes a single token, and Portuguese now costs 216% more. It is the same problem a model has when it memorizes its examples instead of learning: perfect on what it has seen, poor on everything else.
@@ -85,4 +94,5 @@ The measurement in experiment 3 holds for this small tokenizer, trained on one t
 ## Open questions
 
 - If a token is just a number, how does the model know that "cat" and "dog" are closer to each other than to "screw"? → **embedding**, the next page.
-- How many tokens are in Claude's vocabulary, and how much more does Portuguese cost on it? Measure with the API's token counter.
+- ~~How much more does Portuguese cost on Claude?~~ Answered in experiment 4: 16%.
+- How many tokens are in Claude's vocabulary? The API does not say; still open.
