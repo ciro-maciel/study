@@ -48,6 +48,21 @@ What we measured on a Mac (Apple M4 Pro, Python 3.15.2) on 5 November 2026, in 6
 
 The error on new names is almost the same as on the names it trained on: it learned how names are built, it did not memorize the list. And it beats the bigram, which only knows the previous letter. That gap is what attention buys.
 
+## One name, step by step
+
+[`trace.py`](trace.py) runs `microgpt.py` unchanged and then follows a single name through the trained model: the token that goes in at each position, the three letters the model finds most likely next, and the probability it gave the right one. On the same Mac, on 5 November 2026, in 43 seconds:
+
+```
+--- "emma" as tokens: [26, 4, 12, 12, 0, 26] ---
+after <BOS>  model guesses: a 14%, k 9%, j 8%             right answer e: 5%
+after     e  model guesses: l 28%, r 12%, n 12%           right answer m: 6%
+after     m  model guesses: i 22%, a 22%, e 18%           right answer m: 1%
+after     m  model guesses: i 25%, a 23%, e 17%           right answer a: 23%
+after     a  model guesses: n 30%, <BOS> 17%, r 10%       right answer <BOS>: 17%
+```
+
+Read it line by line. `<BOS>` (token 26) marks where a name starts and ends. At the start the model bets on the letters names often begin with. After `em` it expects a vowel, so a second `m` gets 1%. After `emm` the right `a` is one of its top three. After the final `a` it gives 17% to the name ending there. Every one of the 1,000 training steps is this same walk, with the error of each right answer pushed down a little. Try your own: `python3 trace.py anna`.
+
 ## What is inside, in file order
 
 | Part | What it does |
@@ -73,6 +88,7 @@ Change one line, run again, compare. Edit a copy (`cp microgpt.py experiment.py`
 ## Learned from
 
 - [microGPT-C](https://github.com/vixhal-baraiya/microgpt-c): measuring on names the model never saw, against a simple baseline (`evaluate.py`).
+- [NamiGPT](https://github.com/aa1143/NamiGPT): following one tiny example from the first token to the last guess (`trace.py`).
 
 ## Study next
 

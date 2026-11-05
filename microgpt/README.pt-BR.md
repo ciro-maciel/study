@@ -48,6 +48,21 @@ O que medimos num Mac (Apple M4 Pro, Python 3.15.2) em 5 de novembro de 2026, em
 
 O erro nos nomes novos é quase o mesmo dos nomes do treino: ele aprendeu como um nome é feito, não decorou a lista. E ganha do bigrama, que só conhece a letra anterior. Essa diferença é o que a atenção compra.
 
+## Um nome, passo a passo
+
+O [`trace.py`](trace.py) roda o `microgpt.py` sem mudar nada e depois acompanha um único nome pelo modelo treinado: o token que entra em cada posição, as três letras que o modelo acha mais prováveis em seguida e a probabilidade que ele deu à certa. No mesmo Mac, em 5 de novembro de 2026, em 43 segundos:
+
+```
+--- "emma" as tokens: [26, 4, 12, 12, 0, 26] ---
+after <BOS>  model guesses: a 14%, k 9%, j 8%             right answer e: 5%
+after     e  model guesses: l 28%, r 12%, n 12%           right answer m: 6%
+after     m  model guesses: i 22%, a 22%, e 18%           right answer m: 1%
+after     m  model guesses: i 25%, a 23%, e 17%           right answer a: 23%
+after     a  model guesses: n 30%, <BOS> 17%, r 10%       right answer <BOS>: 17%
+```
+
+Leia linha a linha. O `<BOS>` (token 26) marca onde um nome começa e termina. No começo o modelo aposta nas letras com que os nomes costumam começar. Depois de `em` ele espera uma vogal, então um segundo `m` leva 1%. Depois de `emm` o `a` certo está entre os três favoritos. Depois do `a` final ele dá 17% para o nome terminar ali. Cada um dos 1.000 passos de treino é esse mesmo caminho, com o erro de cada resposta certa empurrado um pouco para baixo. Teste o seu: `python3 trace.py anna`.
+
 ## O que tem dentro, na ordem do arquivo
 
 | Parte | O que faz |
@@ -73,6 +88,7 @@ Mude uma linha, rode de novo, compare. Edite uma cópia (`cp microgpt.py experim
 ## Aprendemos com
 
 - [microGPT-C](https://github.com/vixhal-baraiya/microgpt-c): medir em nomes que o modelo nunca viu, contra uma base simples (`evaluate.py`).
+- [NamiGPT](https://github.com/aa1143/NamiGPT): seguir um exemplo mínimo do primeiro token ao último palpite (`trace.py`).
 
 ## Para estudar em seguida
 
