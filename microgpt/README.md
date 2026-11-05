@@ -29,6 +29,25 @@ What we saw on a Mac with Python 3.15, on 31 October 2026:
 
 The error is noisy from step to step because each step looks at a single name; watch the trend, not each line. The file fixes the random seed (`random.seed(42)`), so with the same Python you should get the same names we did.
 
+## Did it learn, or memorize?
+
+The 1,000 training steps see only the first 1,000 names of the shuffled list (`docs[step % len(docs)]`), so the other 31,033 are names the model never saw. [`evaluate.py`](evaluate.py) runs `microgpt.py` unchanged and then measures the average error per letter, the same loss the training prints:
+
+```bash
+python3 evaluate.py
+```
+
+What we measured on a Mac (Apple M4 Pro, Python 3.15.2) on 5 November 2026, in 64 seconds:
+
+| Average error per letter (lower is better) | |
+| --- | --- |
+| Guessing each letter at random (27 options) | 3.30 |
+| Bigram: each letter from the one before, counted on the same 1,000 names, on 500 unseen names | 2.52 |
+| microgpt, on 500 names it trained on | 2.35 |
+| microgpt, on 500 names it never saw | 2.39 |
+
+The error on new names is almost the same as on the names it trained on: it learned how names are built, it did not memorize the list. And it beats the bigram, which only knows the previous letter. That gap is what attention buys.
+
 ## What is inside, in file order
 
 | Part | What it does |
@@ -50,6 +69,10 @@ Change one line, run again, compare. Edit a copy (`cp microgpt.py experiment.py`
 - `num_steps = 1000` → `3000`: lower error, more convincing names, three times the wait.
 - `n_embd = 16` → `32`: a wider model; see how the parameter count and the time grow.
 - Replace `input.txt` with your own list, one item per line (cities, product names, words in your language) and change nothing else.
+
+## Learned from
+
+- [microGPT-C](https://github.com/vixhal-baraiya/microgpt-c): measuring on names the model never saw, against a simple baseline (`evaluate.py`).
 
 ## Study next
 

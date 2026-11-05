@@ -29,6 +29,25 @@ O que vimos num Mac com Python 3.15, em 31 de outubro de 2026:
 
 O erro oscila de um passo para o outro porque cada passo olha um nome só; acompanhe a tendência, não cada linha. O arquivo fixa a semente aleatória (`random.seed(42)`), então com o mesmo Python você deve ver os mesmos nomes que nós.
 
+## Aprendeu ou decorou?
+
+Os 1.000 passos de treino veem só os primeiros 1.000 nomes da lista embaralhada (`docs[step % len(docs)]`), então os outros 31.033 são nomes que o modelo nunca viu. O [`evaluate.py`](evaluate.py) roda o `microgpt.py` sem mudar nada e depois mede o erro médio por letra, o mesmo que o treino imprime:
+
+```bash
+python3 evaluate.py
+```
+
+O que medimos num Mac (Apple M4 Pro, Python 3.15.2) em 5 de novembro de 2026, em 64 segundos:
+
+| Erro médio por letra (menor é melhor) | |
+| --- | --- |
+| Chutar cada letra ao acaso (27 opções) | 3,30 |
+| Bigrama: cada letra pela anterior, contado nos mesmos 1.000 nomes, em 500 nomes novos | 2,52 |
+| microgpt, em 500 nomes em que treinou | 2,35 |
+| microgpt, em 500 nomes que nunca viu | 2,39 |
+
+O erro nos nomes novos é quase o mesmo dos nomes do treino: ele aprendeu como um nome é feito, não decorou a lista. E ganha do bigrama, que só conhece a letra anterior. Essa diferença é o que a atenção compra.
+
 ## O que tem dentro, na ordem do arquivo
 
 | Parte | O que faz |
@@ -50,6 +69,10 @@ Mude uma linha, rode de novo, compare. Edite uma cópia (`cp microgpt.py experim
 - `num_steps = 1000` → `3000`: erro menor, nomes mais convincentes, três vezes a espera.
 - `n_embd = 16` → `32`: um modelo mais largo; veja quanto crescem os parâmetros e o tempo.
 - Troque o `input.txt` por uma lista sua, um item por linha (cidades, nomes de produto, palavras em português) e não mude mais nada.
+
+## Aprendemos com
+
+- [microGPT-C](https://github.com/vixhal-baraiya/microgpt-c): medir em nomes que o modelo nunca viu, contra uma base simples (`evaluate.py`).
 
 ## Para estudar em seguida
 
