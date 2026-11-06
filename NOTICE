@@ -15,6 +15,10 @@ belongs to its author; the MIT License above does not apply to it:
 - input.txt (first names), from karpathy/makemore, downloaded by microgpt.py when it runs.
   https://github.com/karpathy/makemore (MIT License)
 
+- micro-diffusion/train_pure.py and micro-diffusion/names.txt, by Siwoo4985, MIT License.
+  https://github.com/Siwoo4985/Micro-Diffusion
+  Copied unchanged from commit 00535e70f8328bfb445ecc88d96f738ece76961c on 6 November 2026.
+
 The papers in papers/ are kept unchanged, as downloaded from arXiv on 31 October 2026,
 and belong to their authors under the license each one carries on arXiv:
 
