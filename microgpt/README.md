@@ -76,6 +76,30 @@ Read it line by line. `<BOS>` (token 26) marks where a name starts and ends. At 
 | **Training** | 1,000 steps: take a name, predict each next letter, measure the error, adjust |
 | **Inference** | Generates names letter by letter; the `temperature` (0.5) sets how much it risks |
 
+## How fast, and why
+
+The same algorithm runs very differently depending on what runs it. [`microgpt.mjs`](microgpt.mjs) is `microgpt.py` translated line by line into JavaScript: the same `Value`, the same model, the same Adam, the same 1,000 steps. Only the random generator changes, so its names come in another order; that is why the table compares time per letter read.
+
+```bash
+python3 speed.py      # runs microgpt.py unchanged and times it
+node microgpt.mjs
+bun microgpt.mjs
+```
+
+What we measured on a Mac (Apple M4 Pro) on 6 November 2026, the median of three runs each:
+
+| Runs it | Training | Letters read | Per letter | Against Python |
+| --- | --- | --- | --- | --- |
+| Python 3.15.2 (CPython) | 43.3 s | 7,170 | 6,042 µs | 1× |
+| Node 26.13 (V8) | 5.9 s | 7,116 | 834 µs | 7.2× faster |
+| Bun 1.4 (JavaScriptCore) | 3.3 s | 7,116 | 457 µs | 13.2× faster |
+
+Python's time is the whole run (`speed.py` cannot reach inside the file it keeps unchanged); timing only the training loop in a copy gave 42.0 s of 42.1 s, so the difference is small. The runs repeat: every run of each one ended on the same error (2.6497 in Python, 2.2999 in JavaScript).
+
+Where the difference comes from: the arithmetic is the same, number by number, so the gap is in how each machine executes it. CPython reads the program and executes it instruction by instruction, every time; V8 and JavaScriptCore notice the code that repeats (here, the millions of `Value` operations) and compile it into the processor's own instructions while it runs. That is a just-in-time compiler, and in this program it is worth 7 to 13 times.
+
+None of the three does what real models do: every number here is still its own object, one at a time. The next step in speed, doing whole matrices at once, on a GPU, is what PyTorch is for; it is not measured here.
+
 ## Things to try
 
 Change one line, run again, compare. Edit a copy (`cp microgpt.py experiment.py`) so the original stays intact.
@@ -89,6 +113,7 @@ Change one line, run again, compare. Edit a copy (`cp microgpt.py experiment.py`
 
 - [microGPT-C](https://github.com/vixhal-baraiya/microgpt-c): measuring on names the model never saw, against a simple baseline (`evaluate.py`).
 - [NamiGPT](https://github.com/aa1143/NamiGPT): following one tiny example from the first token to the last guess (`trace.py`).
+- [microgpt-efficiency](https://github.com/chanjoongx/microgpt-efficiency): measuring the same algorithm in more than one implementation to show where speed comes from (`speed.py`, `microgpt.mjs`).
 
 ## Study next
 

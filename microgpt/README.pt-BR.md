@@ -76,6 +76,30 @@ Leia linha a linha. O `<BOS>` (token 26) marca onde um nome começa e termina. N
 | **Treino** | 1.000 passos: pega um nome, prevê cada próxima letra, mede o erro, ajusta |
 | **Geração** | Gera nomes letra por letra; a `temperature` (0,5) controla o quanto ele arrisca |
 
+## Quão rápido, e por quê
+
+O mesmo algoritmo roda de jeitos muito diferentes, dependendo de quem o executa. [`microgpt.mjs`](microgpt.mjs) é o `microgpt.py` traduzido linha a linha para JavaScript: o mesmo `Value`, o mesmo modelo, o mesmo Adam, os mesmos 1.000 passos. Só o gerador aleatório muda, então os nomes vêm em outra ordem; por isso a tabela compara o tempo por letra lida.
+
+```bash
+python3 speed.py      # roda o microgpt.py sem alterar e mede o tempo
+node microgpt.mjs
+bun microgpt.mjs
+```
+
+O que medimos num Mac (Apple M4 Pro) em 6 de novembro de 2026, a mediana de três rodadas de cada:
+
+| Quem roda | Treino | Letras lidas | Por letra | Contra o Python |
+| --- | --- | --- | --- | --- |
+| Python 3.15.2 (CPython) | 43,3 s | 7.170 | 6.042 µs | 1× |
+| Node 26.13 (V8) | 5,9 s | 7.116 | 834 µs | 7,2× mais rápido |
+| Bun 1.4 (JavaScriptCore) | 3,3 s | 7.116 | 457 µs | 13,2× mais rápido |
+
+O tempo do Python é a execução inteira (o `speed.py` não alcança o interior do arquivo, que fica intocado); medindo só o laço de treino numa cópia, deu 42,0 s de 42,1 s, então a diferença é pequena. As rodadas se repetem: toda rodada de cada um terminou no mesmo erro (2,6497 no Python, 2,2999 no JavaScript).
+
+De onde vem a diferença: a conta é a mesma, número por número, então a distância está em como cada máquina a executa. O CPython lê o programa e o executa instrução por instrução, toda vez; o V8 e o JavaScriptCore percebem o código que se repete (aqui, os milhões de operações de `Value`) e o compilam nas instruções do próprio processador enquanto ele roda. Isso é um compilador just-in-time, e neste programa ele vale de 7 a 13 vezes.
+
+Nenhum dos três faz o que os modelos de verdade fazem: aqui cada número ainda é um objeto, um de cada vez. O próximo degrau de velocidade, fazer matrizes inteiras de uma vez, numa GPU, é para o que existe o PyTorch; ele não está medido aqui.
+
 ## Para experimentar
 
 Mude uma linha, rode de novo, compare. Edite uma cópia (`cp microgpt.py experimento.py`), para o original ficar intacto.
@@ -89,6 +113,7 @@ Mude uma linha, rode de novo, compare. Edite uma cópia (`cp microgpt.py experim
 
 - [microGPT-C](https://github.com/vixhal-baraiya/microgpt-c): medir em nomes que o modelo nunca viu, contra uma base simples (`evaluate.py`).
 - [NamiGPT](https://github.com/aa1143/NamiGPT): seguir um exemplo mínimo do primeiro token ao último palpite (`trace.py`).
+- [microgpt-efficiency](https://github.com/chanjoongx/microgpt-efficiency): medir o mesmo algoritmo em mais de uma implementação para mostrar de onde vem a velocidade (`speed.py`, `microgpt.mjs`).
 
 ## Para estudar em seguida
 

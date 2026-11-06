@@ -8,6 +8,10 @@ belongs to its author; the MIT License above does not apply to it:
   https://gist.github.com/karpathy/8627fe009c40f57531cb18360106ce95
   Copied unchanged from revision 14fb038816c7aae0bb9342c2dbf1a51dd134a5ff on 31 October 2026.
 
+- microgpt/microgpt.mjs is a line-by-line translation of microgpt.py into JavaScript, made on
+  6 November 2026 by Ciro Cesar Maciel to measure speed (microgpt/README.md). The algorithm and its
+  structure are Andrej Karpathy's.
+
 - input.txt (first names), from karpathy/makemore, downloaded by microgpt.py when it runs.
   https://github.com/karpathy/makemore (MIT License)
 
