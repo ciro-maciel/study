@@ -49,6 +49,10 @@ I build software on my own, with a team of AI agents, and open what I can.
 - **Six free, open-source Mac apps**, MIT, signed and notarized by Apple: [Cleaner](https://github.com/ciro-maciel/cleaner), [Screenshots](https://github.com/ciro-maciel/screenshots), [Speech to Text](https://github.com/ciro-maciel/speech-to-text), [Assistant](https://github.com/ciro-maciel/voice-assistant), [Windows](https://github.com/ciro-maciel/windows) and [Text to Speech](https://github.com/ciro-maciel/text-to-speech).
 - **[Free tools for the browser](https://ciromaciel.click/tools?ref=oss-study)**, and [Infrastructure](https://myinfrastructure.click/?ref=oss-study), the infrastructure AI agents already know how to run.
 
+**Curated lists.** [Nineteen awesome lists](https://go.mymarketing.click/oss-study-listas) in Brazilian Portuguese, translated into 14 languages: AI at work by profession, Pix, NF-e, payments, Open Finance, WhatsApp, Brazilian APIs, MCP servers, Claude Code and more. Every link was opened before it went in.
+
+**Support.** Everything here is free and stays free. If it saved you time, [buy me a coffee](https://go.mymarketing.click/oss-study-apoie): you choose the amount, by Pix or card.
+
 **Follow along.** [Follow @ciro-maciel](https://github.com/ciro-maciel) and star this repository to see each new folder, and watch how it is all made on [YouTube](https://www.youtube.com/@ciro-maciel) and at [ciromaciel.click](https://ciromaciel.click/?ref=oss-study).
 
 ## License

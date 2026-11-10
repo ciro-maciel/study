@@ -49,6 +49,10 @@ Eu faço software sozinho, com uma equipe de agentes de IA, e abro o que posso.
 - **Seis apps de Mac grátis e abertos**, MIT, assinados e autenticados pela Apple: [Cleaner](https://github.com/ciro-maciel/cleaner), [Screenshots](https://github.com/ciro-maciel/screenshots), [Speech to Text](https://github.com/ciro-maciel/speech-to-text), [Assistant](https://github.com/ciro-maciel/voice-assistant), [Windows](https://github.com/ciro-maciel/windows) e [Text to Speech](https://github.com/ciro-maciel/text-to-speech).
 - **[Ferramentas grátis no navegador](https://ciromaciel.click/tools?ref=oss-study)** e o [Infrastructure](https://myinfrastructure.click/?ref=oss-study), a infraestrutura que agentes de IA já sabem operar.
 
+**Listas curadas.** [Dezenove listas awesome](https://go.mymarketing.click/oss-study-listas) em português, traduzidas para 14 idiomas: IA no trabalho por profissão, Pix, NF-e, pagamentos, Open Finance, WhatsApp, APIs brasileiras, servidores MCP, Claude Code e mais. Cada link foi aberto antes de entrar.
+
+**Apoie.** Tudo aqui é grátis e continua grátis. Se te poupou tempo, [pague um café](https://go.mymarketing.click/oss-study-apoie): você escolhe o valor, por Pix ou cartão.
+
 **Acompanhe.** [Siga @ciro-maciel](https://github.com/ciro-maciel) e dê uma estrela neste repositório para ver cada pasta nova, e veja como tudo é feito no [YouTube](https://www.youtube.com/@ciro-maciel) e em [ciromaciel.click](https://ciromaciel.click/?ref=oss-study).
 
 ## Licença
